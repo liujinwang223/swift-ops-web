@@ -16,11 +16,12 @@
                         </button>
                     </div>
                 </div>
-                <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="remember" v-model="remember">
-                    <label class="form-check-label" for="remember">记住我</label>
-                </div>
-                <button type="submit" class="btn btn-primary btn-block">登录</button>
+<!--                <div class="mb-3 form-check">-->
+<!--                    <input type="checkbox" class="form-check-input" id="remember" v-model="remember">-->
+<!--                    <label class="form-check-label" for="remember">记住我</label>-->
+<!--                </div>-->
+                <br/>
+                <button type="submit" class="btn btn-primary w-100 btn-block">登录</button>
             </form>
         </div>
     </div>
@@ -28,7 +29,7 @@
 
 <script>
     import axios from 'axios';
-    import apiPathConfig from '@/apiPathConfig';
+    import apiPathConfig from '@/config/apiPathConfig';
 
     export default {
         name: 'Login',
