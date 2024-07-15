@@ -24,5 +24,24 @@ const router = createRouter({
     ,{ path: '/', component: Home }
   ]
 })
+// //路由拦截
+const routerHistory = []
+router.beforeEach((to,from,next)=>{
+  let info= localStorage.getItem('loginStatus');
+  console.log(info);
+  if (to.path === '/login') {
+    if (from.name !== null) {
+      // 将上一个路由对象保存在Vue实例或Vuex store中
+      routerHistory.push(from)
+    }
+    next();
+  } else {
+    if(info!==null){
+      next();
+    }else{
+      next('/login');
+    }
+  }
 
+})
 export default router
